@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 requests = "*"
 django = "*"
+pillow = "*"
+psycopg2 = "*"
+cloudinary = "*"
 
 [dev-packages]
 
