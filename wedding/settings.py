@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'cloudinary',
     'bootstrap3',
     'registration',
+    'rest_framework',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
