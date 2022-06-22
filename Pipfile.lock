@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c656c2d78139ad0f003639d3a3c773792f8304cc0220bab33cf95d92cbcb6db3"
+            "sha256": "f098195f174f8d618cae06f6f5a13adbd832c35c4b24ce7d1132a3e755c39689"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -69,6 +69,13 @@
             "index": "pypi",
             "version": "==1.29.0"
         },
+        "confusable-homoglyphs": {
+            "hashes": [
+                "sha256:3b4a0d9fa510669498820c91a0bfc0c327568cecec90648cf3819d4a6fc6a751",
+                "sha256:e3ce611028d882b74a5faa69e3cbb5bd4dcd9f69936da6e73d33eda42c917944"
+            ],
+            "version": "==3.2.0"
+        },
         "django": {
             "hashes": [
                 "sha256:502ae42b6ab1b612c933fb50d5ff850facf858a4c212f76946ecd8ea5b3bf2d9",
@@ -84,6 +91,22 @@
             ],
             "index": "pypi",
             "version": "==21.2"
+        },
+        "django-registration": {
+            "hashes": [
+                "sha256:884a4cc9ec87b9f1c0ceb6b6c4b7ba491c1877997a3cd29cc923697dac785eb8",
+                "sha256:dfa176f594fb465c93495caa55686be723a15829769511383e25172d2efbd0e6"
+            ],
+            "index": "pypi",
+            "version": "==3.3"
+        },
+        "django-registration-redux": {
+            "hashes": [
+                "sha256:5079dd36980cc0faddf91a6e991129680410611b1059d8154d064cc0146744b2",
+                "sha256:88eb98530d98a7e3451bf728c0a5f6fe7ea2f45c65ef18f619ef37b940c854f5"
+            ],
+            "index": "pypi",
+            "version": "==2.11"
         },
         "idna": {
             "hashes": [

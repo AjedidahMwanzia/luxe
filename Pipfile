@@ -10,6 +10,8 @@ pillow = "*"
 psycopg2 = "*"
 cloudinary = "*"
 django-bootstrap3 = "*"
+django-registration = "*"
+django-registration-redux = "*"
 
 [dev-packages]
 
