@@ -1,0 +1,28 @@
+{%extends 'photos/base.html'%}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block content%}
+<div  style=" width: 80%; margin-left: 10vw;padding-bottom: 9vw;margin-bottom: 5vw;padding-top: 3vw; padding-left: 7vw;padding-right: 7vw;border-radius: 1vw;">
+    <div class="m-5" >
+        <div class="container" >
+            <div class="row justify-content-center">
+            
+                <div style="height: 70vh;">
+                <img style="max-width: 100%; max-height:100%;border-radius: 1vw;" src="{{photo.image.url}}" alt="">
+                <p style="padding-top:1vw ;">{{photo.description}}</p>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+        <div class="modal-footer justify-content-start" style="padding-top: 6vw;padding-left: 2vw;">
+            <label class="modalBody">Copy share link</label>
+            <input class="form-control " type="text " value="https://jays-gallery.herokuapp.com{{photo.image.url}} " id="{{photo.id}}.url">
+            <button class="btn btn-success btn-lg copy " id=url{photo.id} onclick="myCopyFunction('{{photo.id}}.url') "><i class="fas fa-copy "
+                    style="font-size:1vw;color: white; "></i>Copy</button>
+        </div>
+  </div>
+  
+  
+{% endblock%}
