@@ -134,4 +134,100 @@
     margin-top: -11vw;
     background-color: white;
     border: 0.1vw solid white;
+    color:  #13253f;
+}
+.cards{
+    width: 100%;
+    display: flex;
+    margin-top: 8vw;
+    margin-bottom: 3vw;
+    margin-left: 3vw;
+}
+.card{
+    width: 22%;
+    height: 33vw;
+    margin-left: 1vw;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    color:  #13253f;
+
+}
+.card img{
+    height: 18vw;
+   
+}
+.card hr{
+    width: 16vw;
+    margin-left: 2vw;
+    margin-top: -0.5vw;
+}
+.card h5{
+    text-align: center;
+    margin-top: 0.5vw;
+    font-family: 'Lobster', cursive;
+}
+.card a{
+    text-decoration: none;
+    border: 0.1vw solid ;
+    padding: 0.3vw;
+    border-radius: 2vw;
+    color:  white;
+    width: 10vw;
+    margin-left: 5vw;
+    text-align: center;
+    font-weight: 800;
+    background-color: #034147;
+}
+.card p{
+    padding: 1vw;
+    margin-top: 1vw;
+}
+/* ............................................... */
+.person1 img{
+   width: 40%;
+   height: 20vw;
+   margin-left: 10vw;
+   border-top-left-radius:  50%;
+   border-top-right-radius:  50%;
+}
+.person1{
+    width: 50%;
+    height: 25vw;
+    margin-left: 1vw;
+    color:  #13253f;
+}
+.card5 h5{
+    text-align: center;
+    padding-top: 3vw;
+    font-family: 'Lobster', cursive;
+    color: white;
+    font-size: 2vw;
+}
+.cards1{
+    color: white;
+    display: flex;
+    padding-top: 7vw;
+}
+.person2{
+    width: 50%;
+    padding: 1vw;
+
+}
+.card5{
+    background-color: 
+    #034147;
+}
+/* ......................................... */
+.footer{
+    display: flex;
+    justify-content: space-around;
+}
+#contact div{
+    display: flex;
+    padding: 1vw;
+}
+#contact {
+    display: flex;
+}
+.copy{
+    text-align: center;
 }
