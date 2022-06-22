@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.part1{
+    background-color:#034147 ;
+    width: 30%;
+    height: 50vw;
+}
+.part2{
+    background-image: url(https://res.cloudinary.com/jeddy/image/upload/v1655875539/background_image_dksyv9.jpg);
+    width: 70%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vw;
+}
+.container3{
+    display: flex;
+    flex-direction: row;
+}
