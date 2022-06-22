@@ -9,52 +9,89 @@ from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
 
+# Create your models here.
+class Category(models.Model):
+    name=models.CharField(max_length = 100, null=False,blank=False)
 
-class Project(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.CharField(max_length=250)
-    description = models.TextField()
-    image = CloudinaryField("image")
-    url = models.URLField(blank=True)
-    location = models.CharField(max_length=100, default="Nairobi")
-    date = models.DateTimeField(auto_now_add=True, null=True)
+    def __str__(self):
+        return self.name
+    def save_category(self):
+        self.save()
+    # delete the image database
+    def delete_category(self):
+        self.delete()
 
-    @classmethod
-    def search_by_title(cls, search_term):
-        projects = cls.objects.filter(title__icontains=search_term)
-        return projects
+    def get_all_category(cls):
+        categories = Category.objects.all()
+        return categories
 
-    @classmethod
-    def get_project_by_id(cls, id):
-        project = cls.objects.get(id=id)
-        return project
-
-    @classmethod
-    def get_all_projects(cls):
-        projects = cls.objects.all()
-        return projects
-
-    @classmethod
-    def get_all_projects_by_user(cls, user):
-        projects = cls.objects.filter(user=user)
-        return projects
-
+class Photo(models.Model):
+    name = models.CharField(max_length =30,null=True)
+    category=models.ForeignKey(Category, on_delete=models.SET_NULL,null=True,blank=True)
+    description=models.TextField(null=True)
+    image = models.ImageField(default='DEFAULT VALUE')
+    location = models.ForeignKey('Location',null=True,on_delete=models.CASCADE)
     
-    def update_project(self, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    def __str__(self):
+        return self.description
+
+    def save_image(self):
+        self.save()
+    # delete the image database
+    def delete_image(self):
+        self.delete()
+    # get all images
+    def update_image(self, name, description, location, category):
+        self.name = name
+        self.description = description
+        self.location = location
+        self.category = category
         self.save()
 
-    def save_project(self):
+    @classmethod
+    def get_all_images(cls):
+        images = Photo.objects.all()
+        return images
+    
+
+    # get image by id
+    @classmethod
+    def get_image_by_id(cls, id):
+        image = Photo.objects.get(id=id)
+        return image
+
+    @classmethod
+    def filter_by_category(cls, category_id):
+        images = Photo.objects.filter(category_id=category_id)
+        return images
+    # get images by location
+    @classmethod
+    def filter_by_location(cls, location_id):
+        images = Photo.objects.filter(location__id=location_id)
+        return images
+
+    @classmethod
+    def search_by_category(cls,search_term):
+        searched_photos=cls.objects.filter(category__name__icontains=search_term)
+        return searched_photos
+
+class Location(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    # save location to database
+    def save_location(self):
         self.save()
 
-    def delete_project(self):
+    # update location
+    def update_location(self, name):
+        self.name = name
+        self.save()
+
+     # delete location from database
+    def delete_location(self):
         self.delete()
 
     def __str__(self):
-        return self.title
-
-
+        return self.name
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -77,42 +114,12 @@ class Profile(models.Model):
         return self.user.username
 
 
-
-class Rating(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    design_rate = models.IntegerField(default=0, blank=True, null=True)
-    usability_rate = models.IntegerField(default=0, blank=True, null=True)
-    content_rate = models.IntegerField(default=0, blank=True, null=True)
-    avg_rate = models.IntegerField(default=0, blank=True, null=True)
-    date = models.DateTimeField(auto_now_add=True, null=True)
-
-    def save_rating(self):
-        self.save()
-
-    def delete_rating(self):
-        self.delete()
-
-    @classmethod
-    def filter_by_id(cls, id):
-        rating = Rating.objects.filter(id=id).first()
-        return rating
-
-    def __str__(self):
-        return self.user.username
-    
-
 class UpdateProfileForm(ModelForm):
     class Meta:
         model = Profile
         fields = ("user", "profile_photo", "bio", "contact")
 
 
-
-class ProjectForm(ModelForm):
-    class Meta:
-        model = Project
-        fields = ("user", "title", "description", "image", "url", "location")
 
 
 
