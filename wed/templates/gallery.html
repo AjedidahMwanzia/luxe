@@ -1,0 +1,69 @@
+{%extends 'photos/base.html'%}
+{% load bootstrap3 %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    <title>Jays Gallery</title>
+</head>
+{%block content %}
+<div class="m-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" >
+                    <div class="card-header">
+                    Categories
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <a style="text-decoration: none; color:black;"  href="{% url 'gallery' %}">All</a> 
+                      </li> 
+                      {% for category in categories %}
+                      <li class="list-group-item">
+                        <a style="text-decoration: none; color:black;" href="{% url 'gallery' %}?category={{category.name}}">{{category.name}}</a>
+
+                        </li>
+                      {% endfor %}
+                      
+                     
+                    </ul>
+                  </div>  
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                  {% for photo in photos%}
+
+                
+                    <div class="col-md-4" >
+                      <div class="card"  style="margin-bottom: 1vw;">
+                        <img style="height: 20vh;" src="{{ photo.image.url}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <small>Category:{{photo.category.name}}</small>
+                          <p> Description </p>
+                          <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">view</a>
+                        </div>
+                      </div>
+                    </div>
+                    {% empty %}
+                    <h3>No photos .....</h3>
+                    {% endfor %}
+                  </div>
+            </div>
+
+            
+      
+        </div>
+
+    </div>
+  </div>
+  {%endblock%}
+

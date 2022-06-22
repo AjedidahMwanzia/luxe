@@ -1,0 +1,26 @@
+{%extends 'photos/base.html'%}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for photo in photos %}
+        <div class="col-md-3" >
+          <div class="card"  style="margin-bottom: 1vw;">
+            <img style="height: 20vh;" src="{{ photo.image.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <small>Category:{{photo.category.name}}</small>
+              <p> Description </p>
+              <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">view</a>
+            </div>
+          </div>
+        </div>
+       
+    
+        
+      {% endfor %}
+       <div class="col-md-4"></div>
+       <div class="col-md-4"></div>
+       </div>
+       
+       {% endblock %}
+       
+    </div>
