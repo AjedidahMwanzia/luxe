@@ -6,16 +6,67 @@
 .part1{
     background-color:#034147 ;
     width: 30%;
-    height: 50vw;
+    height: 52vw;
+    padding-top: 1vw;
+    font-size: 2vw;
+    color:  #fbfcfc;
 }
 .part2{
-    background-image: url(https://res.cloudinary.com/jeddy/image/upload/v1655875539/background_image_dksyv9.jpg);
+    background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+    ),
+    url(https://res.cloudinary.com/jeddy/image/upload/v1655875539/background_image_dksyv9.jpg);
     width: 70%;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 50vw;
+    padding-top: 1vw;
+    height: 52vw;
+   
 }
 .container3{
     display: flex;
     flex-direction: row;
+    color: white;
+    background-color:  rgba(0, 0, 0, 0.4);
+    font-family: 'Poppins', sans-serif;
+    
+}
+.part1 h3{
+    padding-left: 4vw;
+    padding-top: 1vw;
+}
+.part2 .navbar a{
+    text-decoration: none;
+    color:  #fbfcfc;
+    font-size: 1.2vw;
+}
+.heading h6{
+    font-size: 4.5vw;
+    font-weight: 500;
+    color: white;
+    font-family: 'Lobster', cursive;
+}
+.heading p{
+    font-weight: 500;
+    font-size: 1.2vw;
+    font-family: 'Lobster', cursive;
+}
+.heading{
+    margin-top: 10vw;
+    margin-left: -18vw;
+}
+.navbar{
+    margin-left: 16vw;
+}
+.logo a{
+    padding-left: 2vw;
+}
+.reserve{
+    border: 0.1vw solid #fbfcfc ;
+    padding: 0.5vw;
+    border-radius: 2vw;
+    margin-left: 2vw;
+   
 }

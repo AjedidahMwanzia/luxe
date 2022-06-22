@@ -3,11 +3,63 @@
 {% load static %}
 <div class="container3">
     <div class="part1">
-        <h1>hello</h1>
+        <h3>Wedding</h3>
     </div>
     <div class="part2">
-        <h2>there</h2>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container container-fluid">
+              
+                <div class="logo">
+                  <a href="/">Home</a>
+              </div>
+              <div class="logo">
+                <a href="/">Category</a>
+            </div>
+            <div class="logo">
+                <a href="/">contact</a>
+            </div>
+            <div class="reserve">
+                <a href="/">Reservation</a>
+            </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    </ul>
+               <ul class="navbar-nav nav-right" style="display: flex;">
+                              {% if user.is_authenticated %}
+                              <div>
+                                  <li style="margin-top: 1.5vw;" class="nav-item text-center" id="try">
+                                      <li><span class="nav-link text-dark"><a href="/profile" class="text-primary" ><strong>{{ user.username }}</strong><img class="rounded-circle nav-img"
+                                          src="{{ user.profile.profile_photo.url}}"
+                                          alt=""></a></span></li> 
+                              </div>
+                              <div>
+                                  <li><span class="nav-link text-dark"><a href="/logout" class="text-primary"><br><strong>logout</strong></a></span></li>
+                              </div>
+                          
+                                         
+                              {% else %}
+                              <a class="log" href="/accounts/login"
+                                      style="color: color: #fbfcfc">Register/LogIn</a>
+                              {% endif %}
+                          </li>
+                      </ul>
+                    
+                </div>
+            </div>
+          </nav>
+          <div class="heading">
+            <h6>Make Stunning Weddings, Receptions <br> and Bachelorettes.</h6>
+            <p>The magnificence of a wedding is as good as the service providers who planned everything .Meet the best in the game</p>
+          </div>
     </div>
 </div>
+   
+  
 
 {% endblock %}
