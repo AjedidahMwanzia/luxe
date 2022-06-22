@@ -26,11 +26,11 @@ def gallery(request):
     locations=Location.objects.all
 
     context = {'categories':categories,'photos':photos,'locations':locations}
-    return render(request,'photos/gallery.html',context)
+    return render(request,'gallery.html',context)
 
 def viewPhoto(request,pk):
     photo = Photo.objects.get(id=pk)
-    return render(request,'photos/photo.html',{'photo':photo})
+    return render(request,'photo.html',{'photo':photo})
 
 def search_results(request):
     if 'photo' in request.GET and request.GET["photo"]:
@@ -38,17 +38,17 @@ def search_results(request):
         searched_photos = Photo.search_by_category(search_term)
         message = f"{search_term}"
 
-        return render(request, 'photos/search.html',{"message":message,"photos": searched_photos})
+        return render(request, 'search.html',{"message":message,"photos": searched_photos})
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'photos/search.html',{"message":message})
+        return render(request, 'search.html',{"message":message})
 
 
 def get_location(request,location_id):
     photos=Photo.filter_by_location(location_id)
 
-    return render (request,'photos/location.html',{'photos':photos})
+    return render (request,'location.html',{'photos':photos})
 
 
 @login_required(login_url="/accounts/login/")
