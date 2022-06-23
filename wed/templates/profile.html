@@ -6,14 +6,16 @@
     <div class=" mt-5">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
-
+                <div class="card" id="card" >
+                 <div class="img">
                     {% if profile.profile_photo %}
                     <img src="{{profile.profile_photo.url}}" alt="" class="card-img-top">
                     {%else%}
                     <img src="https://res.cloudinary.com/jeddy/image/upload/v1655033910/empty_emxrlc.webp"
                         class="card-img-top" alt="My profile picture">
                     {% endif %}
+                 </div>
+                   
                     <div class="card-body text-center">
                         <h4 class="card-text">
                             {{ user.first_name }} {{ user.last_name }}
