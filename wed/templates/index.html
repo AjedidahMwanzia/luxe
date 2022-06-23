@@ -1,6 +1,29 @@
-{% extends 'base.html'%}
-{% block content %}
+
+
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>Wedding-{{title}}</title>
+    {%else%}
+    <title>Wedding</title>
+    {% endif %}
+
+    {% block styles %}
+       
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Allura&family=Antonio:wght@500&family=Lobster&family=Mrs+Saint+Delafield&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,900;1,300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
 <div class="container3">
     <div class="part1">
         <h3>Luxe</h3>
@@ -30,12 +53,12 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     </ul>
-               <ul class="navbar-nav nav-right" style="display: flex;">
+               <!-- <ul class="navbar-nav nav-right" style="display: flex;">
                               {% if user.is_authenticated %}
                               <div>
                                   <li style="margin-top: 1.5vw;" class="nav-item text-center" id="try">
                                       <li><span class="nav-link text-dark"><a href="/profile" class="text-primary" ><strong>{{ user.username }}</strong><img class="rounded-circle nav-img"
-                                          src="{{ user.profile.profile_photo.url}}"
+                                     
                                           alt=""></a></span></li> 
                               </div>
                               <div>
@@ -48,7 +71,7 @@
                                       style="color: color: #fbfcfc">Register/LogIn</a>
                               {% endif %}
                           </li>
-                      </ul>
+                      </ul> -->
                     
                 </div>
             </div>

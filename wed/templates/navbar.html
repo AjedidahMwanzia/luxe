@@ -1,54 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-<nav class="navbar navbar-expand-lg bg-light " >
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" style="font-size: 1.3vw; margin-top:2vw;" href="{% url 'gallery' %}">Jays Gallery</a>
+<nav class="navbar  navbar-expand-lg" id="navbar2">
+  <div  style="color: white;"class="container container-fluid">
+    
+      <div class="logo">
+        <a style="color: white;text-decoration: none;" href="/">Home</a>
     </div>
-    <li class="nav-item" style="list-style-type: none;">
-        <a class="nav-link active"  aria-current="page" href="{% url 'gallery' %}" >Home</a>
-      </li>
-     <!-- Adding a search form  -->
-     <ul class="navbar-nav mr-auto">
+    <div class="logo">
+      <a style="color: white;text-decoration: none;" href="#category">Category</a>
+  </div>
+  <div class="logo">
+      <a style="color: white;text-decoration: none;"  href="#contact">contact</a>
+  </div>
+  <div class="reserve">
+      <a style="color: white;text-decoration: none;" href="/">Reservation</a>
+  </div>
+  <ul class="navbar-nav mr-auto">
             
            
-      <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Location
-          </a>
-          
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            {% for  location in locations %}
-              <a class="dropdown-item" href="{% url 'get_location' location.id %}">{{location.name}}</a>
-              {%endfor%} 
-          </div>
-      </li>
-  </ul>
-     <div class="col-sm-4 col-md-4 navbar-right">
-
-      <form class="navbar-form" role="search" action="{% url 'search_results' %}">
-       
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search Category" name="photo">
-          <div class="input-group-btn">
-            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-          </div>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          style="color: white;"  aria-haspopup="true" aria-expanded="false">
+            Location
+        </a>
+        
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {% for  location in locations %}
+            <a class="dropdown-item" href="{% url 'get_location' location.id %}">{{location.name}}</a>
+            {%endfor%} 
         </div>
-
-      </form>
+    </li>
+</ul>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <!-- search input -->
+        <form action="{% url 'search_project' %}" class="mt-5" >
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search ..." aria-label="Search for..."
+                    aria-describedby="basic-addon2" name="search_term">
+                <div class="input-group-append">
+                    <button style="color: white;" class="btn" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
     </div>
-    <li style="list-style: none;" class="nav-item">
-      <a class="nav-link" href="/admin">Admin</a>
-  </li>
-    <!-- search form end -->
+    <div class="col-md-1"></div>
+</div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <i class="fa fa-bars"></i>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          </ul>
+     <ul class="navbar-nav nav-right" style="display: flex;">
+                    {% if user.is_authenticated %}
+                    <div>
+                        <li style="margin-top: 1.5vw;" class="nav-item text-center" id="try">
+                            <li ><span class="nav-link text-dark"><a style="color: white;text-decoration: none;" href="/profile" class="text-primary"> {{ user.username }}</a></span></li> 
+                    </div>
+                    <div>
+                        <li><span class="nav-link text-dark"><a style="color: white;text-decoration: none;" href="/logout" class="text-primary"><br><strong>logout</strong></a></span></li>
+                    </div>
+                
+                               
+                    {% else %}
+                    <a class="log" href="/accounts/login"
+                    style="color: white;text-decoration: none;">Register/LogIn</a>
+                    {% endif %}
+                </li>
+            </ul>
+          
+      </div>
   </div>
 </nav>
-</body>
-</html>

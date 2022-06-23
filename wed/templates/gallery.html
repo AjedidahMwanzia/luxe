@@ -1,68 +1,13 @@
-{%extends 'base.html'%}
+{% extends 'base.html'%}
 {% load bootstrap3 %}
 {% load static %}
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  </head>
-  <body>
-    <title>Luxe</title>
-</head>
-{%block content %}
-<nav class="navbar navbar-expand-lg">
-  <div class="container container-fluid">
-    
-      <div class="logo">
-        <a href="/">Home</a>
-    </div>
-    <div class="logo">
-      <a href="#category">Category</a>
-  </div>
-  <div class="logo">
-      <a href="#contact">contact</a>
-  </div>
-  <div class="reserve">
-      <a href="/">Reservation</a>
-  </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          <i class="fa fa-bars"></i>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          </ul>
-     <ul class="navbar-nav nav-right" style="display: flex;">
-                    {% if user.is_authenticated %}
-                    <div>
-                        <li style="margin-top: 1.5vw;" class="nav-item text-center" id="try">
-                            <li><span class="nav-link text-dark"><a href="/profile" class="text-primary" ><strong>{{ user.username }}</strong><img class="rounded-circle nav-img"
-                                src="{{ user.profile.profile_photo.url}}"
-                                alt=""></a></span></li> 
-                    </div>
-                    <div>
-                        <li><span class="nav-link text-dark"><a href="/logout" class="text-primary"><br><strong>logout</strong></a></span></li>
-                    </div>
-                
-                               
-                    {% else %}
-                    <a class="log" href="/accounts/login"
-                            style="color: color: #fbfcfc">Register/LogIn</a>
-                    {% endif %}
-                </li>
-            </ul>
-          
-      </div>
-  </div>
-</nav>
-<div class="m-5">
+
+{% block content %}
+
+
+<div class="m-5" id="design">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -86,7 +31,7 @@
                   </div>  
             </div>
             <div class="col-md-9">
-                <div class="row">
+                <div class="row" id="row1">
                   {% for photo in photos%}
 
                 

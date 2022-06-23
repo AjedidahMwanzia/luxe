@@ -59,6 +59,7 @@
 }
 .navbar{
     margin-left: 16vw;
+    margin-top: -3vw;
 }
 .logo a{
     padding-left: 2vw;
@@ -246,6 +247,30 @@
     margin-top: 5vw;
     
 }
-.card-body {
-    margin-top: -16vw;
+
+.container{
+    margin-top: 3vw;
+}
+.login-container{
+    margin-top: 10vw;
+   
+    
+}
+#design{
+    margin-top: 5vw;
+}
+.card-header h3{
+    margin-top: -5vw;
+}
+
+#navbar2{
+    background-color: #034147;
+    color: white;
+    font-family: 'poppins', cursive;
+    width: 100%;
+    margin-left: -0.01vw;
+}
+#nabvar2 .logo a{
+    text-decoration: none;
+    color: white;
 }

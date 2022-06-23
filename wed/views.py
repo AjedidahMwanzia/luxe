@@ -108,3 +108,14 @@ def update_profile(request):
         return redirect("/profile", {"success": "Profile Updated Successfully"})
     else:
         return render(request, "profile.html", {"danger": "Profile Update Failed"})
+def search_project(request):
+    if 'search_term' in request.GET and request.GET["search_term"]:
+        search_term = request.GET.get("search_term")
+        searched_photos = Photos.objects.filter(title__icontains=search_term)
+        message = f"Search For: {search_term}"
+
+        return render(request, "search.html", {"message": message, "photos": searched_photos})
+    else:
+        message = "You haven't searched for any term"
+        return render(request, "search.html", {"message": message})
+
