@@ -10,10 +10,10 @@
 <div class="m-5" id="design">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="card1" >
-                    <div class="card-header">
-                    Categories
+                    <div id="vendor" class="card-header">
+                    Vendors
                     </div>
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item">
@@ -30,17 +30,17 @@
                     </ul>
                   </div>  
             </div>
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <div class="row" id="row1">
                   {% for photo in photos%}
 
                 
                     <div class="col-md-4" >
                       <div class="card1"  style="margin-bottom: 1vw;">
-                        <img style="height: 20vh;" src="{{ photo.image.url}}" class="card-img-top" alt="...">
+                        <img style="height: 35vh;width: 105%;" src="{{ photo.image.url}}" class="card-img-top" alt="...">
                         <div class="card-body">
                           <small>Category:{{photo.category.name}}</small>
-                          <p> Description </p>
+                          <p> {{photo.description}} </p>
                           <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">view</a>
                         </div>
                       </div>

@@ -30,6 +30,9 @@ class Photo(models.Model):
     category=models.ForeignKey(Category, on_delete=models.SET_NULL,null=True,blank=True)
     description=models.TextField(null=True)
     image = models.ImageField(default='DEFAULT VALUE')
+    image4 = models.ImageField(default='DEFAULT VALUE')
+    image2 = models.ImageField(default='DEFAULT VALUE')
+    image3 = models.ImageField(default='DEFAULT VALUE')
     location = models.ForeignKey('Location',null=True,on_delete=models.CASCADE)
     
     def __str__(self):

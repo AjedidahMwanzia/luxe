@@ -58,11 +58,17 @@
     margin-left: -18vw;
 }
 .navbar{
-    margin-left: 16vw;
+    margin-left: 26vw;
     margin-top: -3vw;
 }
 .logo a{
     padding-left: 2vw;
+}
+#vendor{
+    font-family: 'Lobster', cursive;
+    color:  #13253f;
+    font-size: 2vw;
+    text-decoration: underline;
 }
 .reserve{
     border: 0.1vw solid #fbfcfc ;
@@ -247,15 +253,13 @@
     margin-top: 5vw;
     
 }
-
+.text-center{
+    margin-top: -17vw;
+}
 .container{
     margin-top: 3vw;
 }
-.login-container{
-    margin-top: 10vw;
-   
-    
-}
+
 #design{
     margin-top: 5vw;
 }
@@ -274,3 +278,74 @@
     text-decoration: none;
     color: white;
 }
+.back{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vw;
+    margin-top: -4vw;
+}
+.part5{
+    margin-top: 50vw;
+}
+#row1 .card1 img{
+    height: 50vw;
+}
+#navbar2 .logo a{
+    padding-top: -1vw;
+}
+#row1{
+    color:  #13253f;
+}
+/* .................................................... */
+
+#aboutus .story .description {
+    width: 55%;
+    padding-left: 10%;
+  }
+  #aboutus .story .img img {
+    width: 100%;
+    transition: 0.3s;
+    position: relative;
+    transform: rotate(-10deg);
+    border: 0.1vw solid #494949;
+  }
+  #aboutus .story .img {
+    position: relative;
+    width: 45%;
+    border: 0.1vw solid #494949;
+    transform: rotate(10deg);
+    backdrop-filter: blur(0.1vw);
+  }
+  #aboutus{
+    padding: 0 10%;
+  }
+  
+  #aboutus .story {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10% 0;
+  }
+  
+  #aboutus .story .description span {
+    display: flex;
+    align-items: center;
+    color: #252B42;
+    font-size: 2vw;
+    margin-bottom: 2%;
+    font-weight: bold;
+    font-family: 'lobster', serif;
+  }
+  
+  #aboutus .story .description span div {
+    width: 0.8vw;
+    height: 0.8vw;
+    border-radius: 50%;
+    background-color: #252B42;
+    margin-right: 2%;
+  }
+  #aboutus .story .description p {
+    color: #252B42;
+    font-size: 1.1vw;
+    line-height: 1.8vw;
+  }
