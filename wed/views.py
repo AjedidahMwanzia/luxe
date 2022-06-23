@@ -9,6 +9,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializer import ProfileSerializer
 from .permissions import IsAdminOrReadOnly
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Create your views here.
 def index(request):
@@ -55,8 +58,7 @@ def get_location(request,location_id):
 def profile(request):  
     current_user = request.user
     profile = Profile.objects.filter(user_id=current_user.id).first()  # get profile
-    project = Project.objects.filter(user_id=current_user.id).all()  # get all projects
-    return render(request, "profile.html", {"profile": profile, "images": project})
+    return render(request, "profile.html", {"profile": profile})
 
 
 @login_required(login_url="/accounts/login/")
