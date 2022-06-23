@@ -222,6 +222,7 @@
 .card5{
     background-color: 
     #034147;
+    height: 40vw;
 }
 /* ......................................... */
 .footer{
@@ -288,7 +289,7 @@
     margin-top: 50vw;
 }
 #row1 .card1 img{
-    height: 50vw;
+    height: 53vw;
 }
 #navbar2 .logo a{
     padding-top: -1vw;
@@ -318,6 +319,7 @@
   }
   #aboutus{
     padding: 0 10%;
+    padding-top: 40vw;
   }
   
   #aboutus .story {
@@ -348,4 +350,16 @@
     color: #252B42;
     font-size: 1.1vw;
     line-height: 1.8vw;
+  }
+  /* ........................................... */
+  .part5{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -2vw;
+
+  }
+  .part5 img{
+    width: 33.3%;
+    height: 30vw;
   }
